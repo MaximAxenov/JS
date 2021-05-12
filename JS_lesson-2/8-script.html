@@ -1,0 +1,13 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+    var j = +prompt("Ведите число для возведения в степень");
+    var pow = +prompt("Ведите степень, в которую будем возводить число");
+    var jj = j
+    function power(j, pow, jj)
+    {
+        if (pow == 1)
+        return alert(j);
+        power(jj*j, --pow, jj)
+    }
+    power (j, pow, jj)
+</script>
