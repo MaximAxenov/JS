@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        if (!("a" in window)) {
+        var a = 1;
+        }
+        alert(a);//Выдаст undefined
+    </script>
+    <script>
+        var b = function a(x) {
+        x && a(--x);
+        };
+        alert(a);//Выдаст underfined
+    </script>
+    <script>
+        function a(x) {
+        return x * 2;
+        }
+        var a;
+        alert(a);//Выдаст функцию без смысла
+    </script>
+    <script>
+    function b(x, y, a) {
+        arguments[2] = 10;// Это присвоение 2му параметру в функции значения, т.е. а = 10
+        alert(a);
+        }
+        b(1, 2, 3); //10/ не смотря на то, что при вызове функции b() в качестве аргумента (а) задано значение 3, 
+                    //внутри функции есть присваивание а = 10, 
+    </script>
+    <script>
+        function a() {
+        alert(this);
+        }
+        a.call(null);//[object Window]
+    </script>
+</body>
+</html>
